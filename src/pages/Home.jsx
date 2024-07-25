@@ -6,8 +6,20 @@ const Home = () => {
 
   return (
     <div>
-      <h2>{data.home.smallTitle}</h2>
-      <h1>{data.home.title}</h1>
+      {/* daca exista data, afiseaza continutul */}
+      {data ? (
+        <>
+          <div>
+            <h2>{data.home.smallTitle}</h2>
+            <h1>{data.home.title}</h1>
+            <p>{data.home.description}</p>
+          </div>
+          <button>{data.home.button}</button>
+        </>
+      ) : (
+        //daca nu este inca setat data, afisam loading
+        <p>loading</p>
+      )}
     </div>
   );
 };
